@@ -46,4 +46,4 @@ function myFilter(array, callback) {
 function isGreaterThan7(element) {
   return element > 7;
 }
-console.log("myEvery called on [5,8,10] less than 20:", myFilter(test_array, isGreaterThan7));
+console.log("myFilter called on [5,8,10] greater than 7:", myFilter(test_array, isGreaterThan7));
