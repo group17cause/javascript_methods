@@ -89,3 +89,45 @@ Array.prototype.myLastIndexOf = function(target)
 	return -1;							//return -1 if target not found in array
 }
 
+
+Array.prototype.myPush = function (...args){
+  for(let i = 0; i < args.length; i++){
+      this[this.length] = args[i];
+  }
+    return this.length;
+}
+
+/* Test code for myPush
+a = [1,2,3];
+console.log(a.myPush(4,5,6,7));
+*/
+
+
+Object.grabValues = function (obj) {
+    let arr = [];
+    for(let a in obj){
+        arr = [...arr ,obj[a]];
+    }
+    return arr;
+};
+
+/* Test code for Object.grabValues
+const object1 = {
+  a: 1,
+  b: 42,
+  c: 3
+};
+console.log(Object.grabValues(object1));
+*/
+
+
+Array.prototype.myEach = function(callback){
+    for(let i = 0 ; i < this.length; i++){
+        callback(this[i], i, this);
+    }
+    return undefined;
+};
+
+/* Test code for myEach
+[1,2,3].myEach(element => console.log(element));
+*/
