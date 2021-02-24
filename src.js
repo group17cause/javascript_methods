@@ -34,6 +34,16 @@ function isLessThan20(arg) {
 console.log("myEvery called on [5,8,10] less than 20:", myEvery(test_array, isLessThan20));
 
 
-// function myFilter() {
-
-// }
+function myFilter(array, callback) {
+  let new_array = [];
+  for (let i = 0; i < array.length; i++) {
+    if (callback(array[i])) {
+      new_array.push(array[i]);
+    }
+  }
+  return new_array;
+}
+function isGreaterThan7(element) {
+  return element > 7;
+}
+console.log("myFilter called on [5,8,10] greater than 7:", myFilter(test_array, isGreaterThan7));
