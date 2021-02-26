@@ -9,6 +9,8 @@ function myReduce(array, callback, accumulator) {
   }
   return accumulator;
 }
+
+
 function myReduceDriver(accumulator, arg) {
   return accumulator + arg;
 }
@@ -131,3 +133,37 @@ Array.prototype.myEach = function(callback){
 /* Test code for myEach
 [1,2,3].myEach(element => console.log(element));
 */
+
+function lastIndexOf(arr, size, element) {
+  var x; // will contain the last place element was seen
+  for (i = 0; i < size; i++)
+  {
+      if (arr[i] == element)
+      {
+          x = i +1 // if element is found, update x
+      }
+  }
+  return x;
+}
+
+
+function grabKeys(obj)
+{
+   let key_list = [];
+   for(let key in obj)
+   {
+       key_list.push(key)
+   }
+   return key_list;
+}
+
+
+function grabValues(obj)
+{
+   let value_list = [];
+   for(let value in obj)
+   {
+       value_list.push(obj[value])
+   }
+   return value_list;
+}
