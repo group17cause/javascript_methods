@@ -134,36 +134,33 @@ Array.prototype.myEach = function(callback){
 [1,2,3].myEach(element => console.log(element));
 */
 
-function lastIndexOf(arr, size, element) {
-  var x; // will contain the last place element was seen
-  for (i = 0; i < size; i++)
-  {
-      if (arr[i] == element)
-      {
-          x = i +1 // if element is found, update x
-      }
-  }
-  return x;
-}
-
-
-function grabKeys(obj)
-{
+function grabKeys(obj) {
    let key_list = [];
    for(let key in obj)
    {
        key_list.push(key)
    }
-   return key_list;
+   return key_list
 }
 
+function myMap(arr) {
+    result_array = [] // array to store new elements in
+    var i
+    for(i = 0; i < arr.length; i++)
+    {
+        // calls some callback function and stores results in new array
+        result_array [i] = myCallbackFunction(arr[i])
+    }
+    return result_array
+}
 
-function grabValues(obj)
-{
-   let value_list = [];
-   for(let value in obj)
-   {
-       value_list.push(obj[value])
-   }
-   return value_list;
+function includes(arr, x) {
+    for (let i = 0; i < arr.length; i++)
+    {
+        if (arr[i] == x) // check if element is equal to element being looked for
+        {
+            return true
+        }
+    }
+    return false
 }
